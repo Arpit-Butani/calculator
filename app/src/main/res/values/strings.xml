@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">calculator</string>
+    <string name="addition_sign">+</string>
+    <string name="lbl_ac">AC</string>
+    <string name="bracket_close_sign">)</string>
+    <string name="bracket_open_sign">(</string>
+    <string name="lbl_c">C</string>
+    <string name="lbl_decimal_point">.</string>
+    <string name="lbl_0">0</string>
+    <string name="divide_sign">÷</string>
+    <string name="lbl_8">8</string>
+    <string name="lbl_equal">=</string>
+    <string name="lbl_5">5</string>
+    <string name="lbl_4">4</string>
+    <string name="lbl_minus">-</string>
+    <string name="multiplication_sign">×</string>
+    <string name="lbl_9">9</string>
+    <string name="lbl_1">1</string>
+    <string name="lbl_7">7</string>
+    <string name="lbl_6">6</string>
+    <string name="lbl_3">3</string>
+    <string name="lbl_2">2</string>
 </resources>
