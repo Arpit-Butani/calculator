@@ -25,7 +25,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:gravity="bottom|right"
+        android:gravity="bottom|end"
         android:text="@string/lbl_0"
         android:textColor="@color/black"
         android:textSize="64sp" />
