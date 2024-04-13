@@ -53,6 +53,7 @@
                 android:backgroundTint="@color/red"
                 android:text="@string/lbl_c"
                 android:textColor="@color/white"
+                android:onClick="onClear"
                 android:textSize="32sp"
                 app:cornerRadius="36dp" />
 
@@ -312,7 +313,7 @@
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
                 android:backgroundTint="@color/orange"
-                android:onClick="onDigit"
+                android:onClick="onDecimal"
                 android:text="@string/lbl_decimal_point"
                 android:textColor="@color/white"
                 android:textSize="32sp"
