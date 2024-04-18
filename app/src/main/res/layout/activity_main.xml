@@ -91,6 +91,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/divide_sign"
+                android:onClick="onOperator"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:cornerRadius="36dp" />
@@ -150,6 +151,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="@color/green"
                 android:text="@string/multiplication_sign"
+                android:onClick="onOperator"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:cornerRadius="36dp" />

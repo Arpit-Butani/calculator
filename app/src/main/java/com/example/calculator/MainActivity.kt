@@ -28,11 +28,29 @@ class MainActivity : AppCompatActivity() {
     fun onClear(view: View) {
         tvResult.text = ""
     }
+
     fun onDecimal(view: View){
         if (lastNumeric && !lastDot){
             tvResult.append(".")
             lastDot = true
             lastNumeric = false
+        }
+    }
+    fun onOperator(view: View){
+        tvResult.text.let {
+            if (lastNumeric && isOperatorAdded(it.toString())){
+                tvResult.append((view as Button).text)
+                lastNumeric = false
+                lastDot = false
+            }
+        }
+    }
+
+    fun isOperatorAdded(value: String) : Boolean{
+        return if (value.startsWith("-")){
+            false
+        }else{
+            value.contains("÷")||value.contains("×")||value.contains("+")||value.contains("-")
         }
     }
 }
