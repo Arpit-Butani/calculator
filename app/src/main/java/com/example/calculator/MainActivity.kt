@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun onOperator(view: View){
         tvResult.text.let {
-            if (lastNumeric && isOperatorAdded(it.toString())){
+            if (lastNumeric && !isOperatorAdded(it.toString())){
                 tvResult.append((view as Button).text)
                 lastNumeric = false
                 lastDot = false
@@ -50,7 +50,54 @@ class MainActivity : AppCompatActivity() {
         return if (value.startsWith("-")){
             false
         }else{
-            value.contains("÷")||value.contains("×")||value.contains("+")||value.contains("-")
+            value.contains("÷") || value.contains("×") || value.contains("+") || value.contains("-")
+        }
+    }
+    fun onEqual(view: View){
+        if (lastNumeric){
+            var tvValue = tvResult.text.toString()
+            var prefix = ""
+            try {
+                if (tvValue.startsWith("-")){
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+                if (tvValue.contains("-")) {
+                    val splitValue = tvValue.split("-")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if (prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvResult.text = (one.toDouble() - two.toDouble()).toString()
+                }else if (tvValue.contains("+")) {
+                    val splitValue = tvValue.split("+")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if (prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvResult.text = (one.toDouble() + two.toDouble()).toString()
+                }else if (tvValue.contains("x")) {
+                    val splitValue = tvValue.split("x")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if (prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvResult.text = (one.toDouble() * two.toDouble()).toString()
+                }else if (tvValue.contains(resources.getString(R.string.divide_sign))) {
+                    val splitValue = tvValue.split(resources.getString(R.string.divide_sign))
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if (prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvResult.text = (one.toDouble() / two.toDouble()).toString()
+                }
+            }catch (ex:ArithmeticException){
+                ex.printStackTrace()
+            }
         }
     }
 }
